@@ -59,46 +59,48 @@
     <!-- External popup script -->
     <script src="./popup.js"></script>
   </head>
-  <body>
-    <!-- Seasonal Gifting Modal -->
-    <div class="sg-backdrop" id="sgBackdrop" aria-hidden="true">
-      <div
-        class="sg-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="sgTitle"
-        aria-describedby="sgDesc"
-      >
-        <div class="sg-head">
-          <h3 class="sg-title" id="sgTitle">Seasonal Gifting Campaign</h3>
-          <button class="sg-close" id="sgClose" aria-label="Close">×</button>
+
+  <!-- Seasonal Gifting Modal -->
+  <div class="sg-backdrop" id="sgBackdrop" aria-hidden="true">
+    <div
+      class="sg-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sgTitle"
+      aria-describedby="sgDesc"
+    >
+      <div class="sg-head">
+        <h3 class="sg-title" id="sgTitle">Seasonal Gifting Campaign</h3>
+        <button class="sg-close" id="sgClose" aria-label="Close">×</button>
+      </div>
+      <div class="sg-body">
+        <span class="sg-badge">Limited • Ends Dec 31</span>
+        <h4 class="sg-hl">Buy 2 & save 10% + free gift wrap</h4>
+        <p class="sg-copy" id="sgDesc">
+          Make calm a gift. Curated scents for sleep, focus and unwind — perfect
+          for friends and family.
+        </p>
+        <ul class="sg-list">
+          <li>Any 2 candles: <strong>10% off</strong></li>
+          <li>Free eco gift wrap</li>
+          <li>Free AU shipping over A$79</li>
+        </ul>
+        <div class="sg-cta">
+          <a class="btn btn-primary" href="#shop" id="sgShop"
+            >Shop seasonal sets</a
+          >
+          <button class="btn btn-ghost" id="sgLater" type="button">
+            Maybe later
+          </button>
         </div>
-        <div class="sg-body">
-          <span class="sg-badge">Limited • Ends Dec 31</span>
-          <h4 class="sg-hl">Buy 2 & save 10% + free gift wrap</h4>
-          <p class="sg-copy" id="sgDesc">
-            Make calm a gift. Curated scents for sleep, focus and unwind —
-            perfect for friends and family.
-          </p>
-          <ul class="sg-list">
-            <li>Any 2 candles: <strong>10% off</strong></li>
-            <li>Free eco gift wrap</li>
-            <li>Free AU shipping over A$79</li>
-          </ul>
-          <div class="sg-cta">
-            <a class="btn btn-primary" href="#shop" id="sgShop"
-              >Shop seasonal sets</a
-            >
-            <button class="btn btn-ghost" id="sgLater" type="button">
-              Maybe later
-            </button>
-          </div>
-          <div class="sg-footnote">
-            Auto-applies at checkout during campaign period.
-          </div>
+        <div class="sg-footnote">
+          Auto-applies at checkout during campaign period.
         </div>
       </div>
     </div>
+  </div>
+  
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
