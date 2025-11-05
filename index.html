@@ -1,87 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lumora — CALM candles for everyday wellness</title>
-  <meta name="description" content="Lumora stress‑relief floral candles. Candle‑based Aroma for Lifestyle & Mental wellness (CALM). Soy & coconut wax, reusable jars."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <title>Lumora — Stress-relief Aromatherapy Candles | Find Calm in Every Flicker</title>
+  <meta name="description" content="Lumora crafts eco-conscious aromatherapy candles designed to reduce stress and elevate your daily ritual. Discover Lavender Calm, Eucalyptus Clarity, and Chamomile Rest." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://yourusername.github.io/lumora/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lumora — Find Calm in Every Flicker" />
+  <meta property="og:description" content="Eco-conscious aromatherapy candles for stress relief." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/lumora/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1200&auto=format&fit=crop" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:," />
+  <meta name="theme-color" content="#f7f5f2" />
+  <style>
+    /* Critical hero bg (small inline for fast paint) */
+    .hero{background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1600&auto=format&fit=crop');}
+    @media (min-width: 900px){.hero{background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=2000&auto=format&fit=crop');}}
+  </style>
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Lumora",
+    "url":"https://yourusername.github.io/lumora/",
+    "logo":"https://yourusername.github.io/lumora/logo.png",
+    "sameAs":[
+      "https://www.instagram.com/yourbrand",
+      "https://www.tiktok.com/@yourbrand",
+      "https://www.youtube.com/@yourbrand"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="container header">
-    <a class="brand" href="index.html" aria-label="Lumora Home">Lumora</a>
-    <nav>
-      <a href="index.html#products">Shop</a>
-      <a href="index.html#about">About</a>
-      <a class="cart-link" href="cart.html" aria-label="Cart">
-        <span>Cart</span>
-        <span class="cart-count" id="cartCount">0</span>
-      </a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="./">Lumora</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="./">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero container">
-      <div class="hero__text">
-        <h1>Light up <span class="accent">CALM</span></h1>
-        <p>Floral, science‑backed stress relief. Soy & coconut wax, organic cotton wick, reusable glass jars.</p>
-        <div class="hero__cta">
-          <a class="btn" href="#products">Shop candles</a>
-          <a class="btn btn--ghost" href="product.html?id=rose-romance">View Rose Romance</a>
-        </div>
-        <ul class="pill-list">
-          <li>Lavender • Rose • Jasmine</li>
-          <li>Eco‑friendly</li>
-          <li>Long burn</li>
-        </ul>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Find Calm in Every Flicker.</h1>
+      <p class="subtitle">Eco-conscious aromatherapy candles designed to relieve stress — naturally.</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="#shop">Shop the Collection</a>
+        <a class="btn btn-ghost" href="#story">Learn Our Story</a>
       </div>
-      <picture class="hero__image">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Lumora candle with warm floral ambiance"/>
-      </picture>
-    </section>
+    </div>
+  </section>
 
-    <section id="products" class="container section">
-      <div class="section__header">
-        <h2>Best‑sellers</h2>
-        <p>Candle‑based Aroma for Lifestyle & Mental wellness.</p>
-      </div>
-      <div class="grid" id="productGrid">
-      </div>
-    </section>
-
-    <section id="about" class="container section section--muted">
-      <div class="section__header">
-        <h2>Why Lumora?</h2>
-      </div>
-      <div class="features">
-        <div class="card feature">
-          <h3>Scientifically soothing</h3>
-          <p>Lavender, rose, and jasmine aromas associated with relaxation in peer‑reviewed research.</p>
+  <main id="main">
+    <!-- BRAND PROMISE -->
+    <section id="story" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">What makes Lumora different</h2>
+          <p class="muted">A union of science, sustainability and sincere storytelling.</p>
         </div>
-        <div class="card feature">
-          <h3>Sustainable</h3>
-          <p>Soy & coconut wax, organic cotton wick, reusable glass jars, recycled packaging.</p>
-        </div>
-        <div class="card feature">
-          <h3>Personal</h3>
-          <p>Mix & match floral blends to create your own ritual. CALM = Candle‑based Aroma for Lifestyle & Mental wellness.</p>
+        <div class="grid-3">
+          <article class="card feature">
+            <div class="icon">🧠</div>
+            <h3>Scientifically Grounded</h3>
+            <p>Natural essential-oil blends associated with reduced anxiety and improved sleep quality.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">🌱</div>
+            <h3>Sustainability by Design</h3>
+            <p>Soy/coconut wax, reusable glass, recyclable packaging and refill options.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">💬</div>
+            <h3>Community & Honesty</h3>
+            <p>Real moments, real homes — #MyLumoraMoments fuels authentic social proof.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="container banner">
-      <div class="banner__content">
-        <strong>Student deal:</strong> use code <code>STUDENT10</code> for 10% off. Free shipping over $80.
+    <!-- PRODUCTS -->
+    <section id="shop" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Featured Scents</h2>
+          <p class="muted">Choose the mood you need today.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card product">
+            <picture>
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Lavender Calm Candle in a reusable glass jar" />
+            </picture>
+            <div class="card-body">
+              <h3>Lavender Calm</h3>
+              <p class="tags">Stress Relief · Sleep</p>
+              <p class="price">A$39</p>
+              <a class="btn btn-secondary" href="./product-lavender.html">View Product</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <picture>
+              <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1200&auto=format&fit=crop" alt="Eucalyptus Clarity Candle on a wooden tray" />
+            </picture>
+            <div class="card-body">
+              <h3>Eucalyptus Clarity</h3>
+              <p class="tags">Breath · Focus</p>
+              <p class="price">A$39</p>
+              <a class="btn btn-secondary" href="./product-lavender.html#related">View Similar</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <picture>
+              <img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=1200&auto=format&fit=crop" alt="Chamomile Rest Candle with soft warm light" />
+            </picture>
+            <div class="card-body">
+              <h3>Chamomile Rest</h3>
+              <p class="tags">Unwind · Deep Relaxation</p>
+              <p class="price">A$39</p>
+              <a class="btn btn-secondary" href="./product-lavender.html#related">View Similar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RITUAL STORY -->
+    <section class="section">
+      <div class="container split">
+        <div>
+          <h2 class="h2">More than a scent — it’s a ritual of calm.</h2>
+          <p>Turn everyday stress into mindful moments. Set a softer light, focus on your breath, and let a gentle aroma cue your body to unwind.</p>
+          <a class="link" href="#journal">Explore The Calm Journal →</a>
+        </div>
+        <figure class="rounded shadow">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Evening ritual with a candle, tea and a book" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">#MyLumoraMoments</h2>
+          <p class="muted">Real homes, real calm. Tag us to be featured.</p>
+        </div>
+        <div class="masonry">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" alt="Cozy corner with candle and blanket" />
+          <img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=800&auto=format&fit=crop" alt="Desk setup with candle and notebook" />
+          <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=800&auto=format&fit=crop" alt="Soft morning light and a candle" />
+          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop" alt="Living room shelf styling with candle" />
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section id="journal" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">The Calm Journal</h2>
+          <p class="muted">Practical rituals and slow-living reads.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card article">
+            <h3>How Aromatherapy Supports Better Sleep</h3>
+            <p>Understanding scent cues and wind-down routines.</p>
+            <a class="link" href="#">Read more →</a>
+          </article>
+          <article class="card article">
+            <h3>5 Evening Rituals to Unplug</h3>
+            <p>Small steps to reset after a long day.</p>
+            <a class="link" href="#">Read more →</a>
+          </article>
+          <article class="card article">
+            <h3>Designing for Sustainability at Home</h3>
+            <p>Low-waste swaps that feel good and look beautiful.</p>
+            <a class="link" href="#">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMAIL CAPTURE -->
+    <section class="section signup">
+      <div class="container row between center stack">
+        <div>
+          <h2 class="h2">Bring calm to your inbox</h2>
+          <p class="muted">Join the Calm Circle for early access and mindful tips.</p>
+        </div>
+        <form class="signup-form" action="#" method="post" aria-label="Join newsletter">
+          <label for="email" class="sr-only">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <button class="btn btn-primary" type="submit">Join Now</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="container footer">
-    <p>© <span id="year"></span> Lumora • Made for MKTG6015 demo • <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Pages ready</a></p>
+  <footer id="contact" class="site-footer">
+    <div class="container row between start stack">
+      <div>
+        <div class="brand">Lumora</div>
+        <p class="muted small">Eco-conscious aromatherapy candles crafted in Australia.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="nav">
+          <li><a href="./">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="badges">
+        <span class="badge">♻️ Recyclable</span>
+        <span class="badge">🕯 Vegan wax</span>
+        <span class="badge">🌏 AU Made</span>
+      </div>
+    </div>
+    <div class="container legal small muted">© <span id="y">2025</span> Lumora. All rights reserved.</div>
   </footer>
 </body>
 </html>
