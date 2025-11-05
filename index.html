@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumora — CALM candles for everyday wellness</title>
+  <meta name="description" content="Lumora stress‑relief floral candles. Candle‑based Aroma for Lifestyle & Mental wellness (CALM). Soy & coconut wax, reusable jars."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="container header">
+    <a class="brand" href="index.html" aria-label="Lumora Home">Lumora</a>
+    <nav>
+      <a href="index.html#products">Shop</a>
+      <a href="index.html#about">About</a>
+      <a class="cart-link" href="cart.html" aria-label="Cart">
+        <span>Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero__text">
+        <h1>Light up <span class="accent">CALM</span></h1>
+        <p>Floral, science‑backed stress relief. Soy & coconut wax, organic cotton wick, reusable glass jars.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#products">Shop candles</a>
+          <a class="btn btn--ghost" href="product.html?id=rose-romance">View Rose Romance</a>
+        </div>
+        <ul class="pill-list">
+          <li>Lavender • Rose • Jasmine</li>
+          <li>Eco‑friendly</li>
+          <li>Long burn</li>
+        </ul>
+      </div>
+      <picture class="hero__image">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Lumora candle with warm floral ambiance"/>
+      </picture>
+    </section>
+
+    <section id="products" class="container section">
+      <div class="section__header">
+        <h2>Best‑sellers</h2>
+        <p>Candle‑based Aroma for Lifestyle & Mental wellness.</p>
+      </div>
+      <div class="grid" id="productGrid">
+      </div>
+    </section>
+
+    <section id="about" class="container section section--muted">
+      <div class="section__header">
+        <h2>Why Lumora?</h2>
+      </div>
+      <div class="features">
+        <div class="card feature">
+          <h3>Scientifically soothing</h3>
+          <p>Lavender, rose, and jasmine aromas associated with relaxation in peer‑reviewed research.</p>
+        </div>
+        <div class="card feature">
+          <h3>Sustainable</h3>
+          <p>Soy & coconut wax, organic cotton wick, reusable glass jars, recycled packaging.</p>
+        </div>
+        <div class="card feature">
+          <h3>Personal</h3>
+          <p>Mix & match floral blends to create your own ritual. CALM = Candle‑based Aroma for Lifestyle & Mental wellness.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container banner">
+      <div class="banner__content">
+        <strong>Student deal:</strong> use code <code>STUDENT10</code> for 10% off. Free shipping over $80.
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Lumora • Made for MKTG6015 demo • <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Pages ready</a></p>
+  </footer>
+</body>
+</html>
