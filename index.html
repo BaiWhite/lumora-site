@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Lumora — Stress-Relief Aromatherapy Candles | Seasonal Gifting</title>
   <meta name="description" content="Discover Lumora’s eco-conscious aromatherapy candles. Shop Lavender Calm, Eucalyptus Clarity and Chamomile Rest. Seasonal gifting now on — Buy 2 & save 10% with free eco wrap." />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://yourusername.github.io/lumora/" />
   <link rel="stylesheet" href="./styles.css" />
@@ -30,90 +30,130 @@
   }
   </script>
 
+  <!-- Page-specific mobile helpers -->
   <style>
-    /* page-specific helpers (kept minimal; rest in styles.css) */
-    .topbar{background:#1e1e1e;color:#fff}
-    .topbar .container{padding:.5rem 0;display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+    /* Top promo bar */
+    .topbar{background:#1e1e1e;color:#fff;position:sticky;top:0;z-index:50}
+    .topbar .container{padding:.6rem 0;display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
     .topbar b{color:#fff}
-    .header-main{padding:.75rem 0}
-    .header-main .brand{font-size:1.1rem}
-    .search{display:flex;gap:.5rem;align-items:center}
-    .search input{padding:.55rem .8rem;border:1px solid #d7d4d0;border-radius:999px;min-width:240px;background:#fff}
-    .categories{display:flex;gap:1rem;list-style:none;margin:.5rem 0 0;padding:0;flex-wrap:wrap}
-    .categories a{padding:.4rem .6rem;border-radius:999px;background:var(--soft)}
-    .hero.banner{min-height:56vh;background:linear-gradient(180deg,#efece7,#f7f5f2)}
-    .hero.banner .container{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:center}
-    @media (max-width:900px){.hero.banner .container{grid-template-columns:1fr}}
+
+    /* Header + mobile nav */
+    .header-main{padding:.6rem 0}
+    .brand{font-size:1.1rem}
+    .hamburger{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:10px;border:1px solid #e2e0dc;background:#fff;cursor:pointer
+    }
+    .hamburger span{width:20px;height:2px;background:#333;position:relative;display:block}
+    .hamburger span:before,.hamburger span:after{content:"";position:absolute;left:0;width:20px;height:2px;background:#333}
+    .hamburger span:before{top:-6px}.hamburger span:after{top:6px}
+    .mobile-nav{
+      display:none; border-top:1px solid #e8e5e1; background:#fff
+    }
+    .mobile-nav.is-open{display:block}
+    .mobile-nav .nav{flex-direction:column;padding:.5rem}
+    .mobile-nav .nav a{padding:.8rem 0}
+
+    /* Search */
+    .search{display:none}
+    @media (min-width:900px){ .search{display:flex;gap:.5rem;align-items:center} }
+    .search input{padding:.6rem .9rem;border:1px solid #d7d4d0;border-radius:999px;min-width:240px;background:#fff}
+
+    /* Categories: horizontal scroll on mobile */
+    .categories{
+      display:flex;gap:.6rem;list-style:none;margin:.5rem 0 0;padding:0;
+      overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none
+    }
+    .categories::-webkit-scrollbar{display:none}
+    .categories a{padding:.5rem .7rem;border-radius:999px;background:var(--soft);white-space:nowrap}
+
+    /* Hero banner */
+    .hero.banner{min-height:52vh;background:linear-gradient(180deg,#efece7,#f7f5f2);display:flex;align-items:center}
+    .hero.banner .container{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media (min-width:900px){ .hero.banner .container{grid-template-columns:1.1fr .9fr} }
     .hero-media img{border-radius:16px;box-shadow:var(--shadow)}
-    .pill{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:#2d7350;color:#fff;font-size:.8rem;margin-bottom:.5rem}
-    .collections .tile img{border-radius:14px;box-shadow:var(--shadow)}
-    .collections .tile h3{margin:.6rem 0 .2rem}
+    .pill{display:inline-block;padding:.3rem .65rem;border-radius:999px;background:#2d7350;color:#fff;font-size:.78rem;margin-bottom:.45rem}
+
+    /* Trust strip */
     .trust-strip{background:#fff;border-top:1px solid #e8e5e1;border-bottom:1px solid #e8e5e1}
-    .trust-strip .list{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;padding:.8rem 0}
-    .trust-strip .item{display:flex;gap:.5rem;align-items:center;color:#42534a}
-    .banner-wide{background:linear-gradient(120deg,#f2eadf,#eef0ec);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center}
-    @media (max-width:900px){.banner-wide{grid-template-columns:1fr}}
+    .trust-strip .list{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;padding:.8rem .5rem}
+    .trust-strip .item{display:flex;gap:.45rem;align-items:center;color:#42534a;font-size:.95rem}
+
+    /* Wide banner */
+    .banner-wide{background:linear-gradient(120deg,#f2eadf,#eef0ec);border-radius:16px;padding:22px;display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
+    @media (min-width:900px){ .banner-wide{grid-template-columns:1fr 1fr;padding:28px} }
+
+    /* Touch-friendly buttons */
+    .btn{min-height:44px}
+    .cta-group{gap:.6rem}
   </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Top promo bar (like dusk style) -->
-  <div class="topbar">
+  <!-- Top promo bar -->
+  <div class="topbar" role="region" aria-label="Promotions">
     <div class="container small">
       <span>Free AU shipping over <b>A$79</b></span>
-      <span>Buy 2 & save 10% — <b>Seasonal gifting</b> on now</span>
+      <span>Buy 2 & save 10% — <b>Seasonal gifting</b></span>
       <span>Eco gift wrap <b>free</b></span>
     </div>
   </div>
 
-  <!-- Header with search + categories -->
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-main row between center stack">
+    <div class="container header-main row between center">
+      <button class="hamburger" id="navToggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false"><span></span></button>
       <a class="brand" href="./">Lumora</a>
       <form class="search" role="search" aria-label="Site search" action="#" method="get">
         <label for="q" class="sr-only">Search</label>
         <input id="q" name="q" type="search" placeholder="Search candles, scents, bundles…" />
         <button class="btn btn-primary" type="submit">Search</button>
       </form>
-      <nav aria-label="Mini actions">
-        <ul class="nav">
-          <li><a href="#journal">Journal</a></li>
-          <li><a href="#contact">Help</a></li>
-        </ul>
-      </nav>
     </div>
     <div class="container">
-      <nav aria-label="Categories">
-        <ul class="categories">
+      <!-- Mobile collapsible nav -->
+      <nav id="mobileNav" class="mobile-nav" aria-label="Mobile menu">
+        <ul class="nav">
           <li><a href="#shop">All Candles</a></li>
           <li><a href="#collections">Lavender Calm</a></li>
           <li><a href="#collections">Eucalyptus Clarity</a></li>
           <li><a href="#collections">Chamomile Rest</a></li>
           <li><a href="#bundles">Gift Sets</a></li>
           <li><a href="#refill">Refills</a></li>
-          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Help</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
 
   <!-- HERO banner -->
   <section class="hero banner">
     <div class="container">
-      <div>
-        <span class="pill">Seasonal Gifting</span>
-        <h1 class="h1">Give the gift of calm</h1>
-        <p class="muted">Stress-relief aromatherapy made with eco wax, reusable glass and science-backed blends.</p>
-        <div class="cta-group" style="margin-top:.75rem">
-          <a class="btn btn-primary" href="#shop">Shop Best Sellers</a>
-          <a class="btn btn-secondary" href="#bundles">Shop Gift Sets</a>
-        </div>
-        <p class="small muted" style="margin-top:.5rem">Buy 2 & save 10% + free eco wrap · Ends Dec 31</p>
-      </div>
+      <div class="hero-text left-centered">
+  <span></span>
+  <h1 class="h1">Give the gift of calm</h1>
+  <p class="muted">Stress-relief aromatherapy made with eco wax, reusable glass and science-backed blends.</p>
+  <div class="cta-group" style="margin-top:.5rem">
+    <a class="btn btn-primary" href="#shop">Shop Best Sellers</a>
+    <a class="btn btn-secondary" href="#bundles">Shop Gift Sets</a>
+  </div>
+  <p class="small muted" style="margin-top:.4rem">
+    Buy 2 & save 10% + free eco wrap · Ends Dec 31
+  </p>
+</div>
+
       <figure class="hero-media">
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1400&auto=format&fit=crop" alt="Calming home scene with candles and soft light" />
+        <picture>
+          <source srcset="
+            https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=900&auto=format&fit=crop 900w,
+            https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1400&auto=format&fit=crop 1400w
+          " sizes="(max-width: 900px) 92vw, 45vw" />
+          <img
+            src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
+            alt="Calming home scene with candles and soft light"
+            loading="lazy" width="1200" height="800" />
+        </picture>
       </figure>
     </div>
   </section>
@@ -129,7 +169,7 @@
       </div>
     </section>
 
-    <!-- Shop by collection (like dusk: tiles) -->
+    <!-- Shop by collection -->
     <section id="collections" class="section collections">
       <div class="container">
         <div class="section-head">
@@ -138,19 +178,42 @@
         </div>
         <div class="grid-3">
           <article class="tile card">
-            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Lavender Calm collection" />
+            <picture>
+              <source srcset="
+                https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop 1200w" 
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop"
+                   alt="Lavender Calm collection" loading="lazy" width="1200" height="800" />
+            </picture>
             <h3>Lavender Calm</h3>
             <p class="muted small">Stress relief · Sleep</p>
             <a class="link" href="./product-lavender.html">Shop now →</a>
           </article>
+
           <article class="tile card">
-            <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1200&auto=format&fit=crop" alt="Eucalyptus Clarity collection" />
+            <picture>
+              <source srcset="
+                https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1200&auto=format&fit=crop"
+                   alt="Eucalyptus Clarity collection" loading="lazy" width="1200" height="800" />
+            </picture>
             <h3>Eucalyptus Clarity</h3>
             <p class="muted small">Breath · Focus</p>
             <a class="link" href="#shop">Shop now →</a>
           </article>
+
           <article class="tile card">
-            <img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=1200&auto=format&fit=crop" alt="Chamomile Rest collection" />
+            <picture>
+              <source srcset="
+                https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=1200&auto=format&fit=crop"
+                   alt="Chamomile Rest collection" loading="lazy" width="1200" height="800" />
+            </picture>
             <h3>Chamomile Rest</h3>
             <p class="muted small">Unwind · Deep relaxation</p>
             <a class="link" href="#shop">Shop now →</a>
@@ -159,7 +222,7 @@
       </div>
     </section>
 
-    <!-- Best sellers (grid like product carousel but static) -->
+    <!-- Best sellers -->
     <section id="shop" class="section alt">
       <div class="container">
         <div class="section-head">
@@ -169,7 +232,12 @@
         <div class="grid-3">
           <article class="card product">
             <picture>
-              <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Lavender Calm candle" />
+              <source srcset="
+                https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
+                   alt="Lavender Calm candle" loading="lazy" width="1200" height="800" />
             </picture>
             <div class="card-body">
               <h3>Lavender Calm</h3>
@@ -181,7 +249,12 @@
 
           <article class="card product">
             <picture>
-              <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop" alt="Eucalyptus Clarity candle" />
+              <source srcset="
+                https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop"
+                   alt="Eucalyptus Clarity candle" loading="lazy" width="1200" height="800" />
             </picture>
             <div class="card-body">
               <h3>Eucalyptus Clarity</h3>
@@ -193,7 +266,12 @@
 
           <article class="card product">
             <picture>
-              <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop" alt="Chamomile Rest candle" />
+              <source srcset="
+                https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&auto=format&fit=crop 600w,
+                https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 900px) 92vw, 32vw" />
+              <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop"
+                   alt="Chamomile Rest candle" loading="lazy" width="1200" height="800" />
             </picture>
             <div class="card-body">
               <h3>Chamomile Rest</h3>
@@ -206,7 +284,7 @@
       </div>
     </section>
 
-    <!-- Wide banner (campaign) -->
+    <!-- Wide banner -->
     <section id="bundles" class="section">
       <div class="container">
         <div class="banner-wide">
@@ -214,12 +292,22 @@
             <span class="pill">Gifting</span>
             <h2 class="h2">Seasonal calm sets</h2>
             <p class="muted">Build your own duo — save 10% and get free eco gift wrap. Perfect for friends, family and self-care.</p>
-            <div class="cta-group" style="margin-top:.5rem">
+            <div class="cta-group" style="margin-top:.4rem">
               <a class="btn btn-primary" href="#shop">Shop duo & save</a>
               <a class="btn btn-ghost" href="#sustainability">Why eco wrap?</a>
             </div>
           </div>
-          <figure><img class="rounded shadow" src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1400&auto=format&fit=crop" alt="Gift wrapped candle set" /></figure>
+          <figure>
+            <picture>
+              <source srcset="
+                https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=900&auto=format&fit=crop 900w,
+                https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1400&auto=format&fit=crop 1400w"
+                sizes="(max-width: 900px) 92vw, 45vw" />
+              <img class="rounded shadow"
+                   src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1400&auto=format&fit=crop"
+                   alt="Gift wrapped candle set" loading="lazy" width="1400" height="900" />
+            </picture>
+          </figure>
         </div>
       </div>
     </section>
@@ -251,7 +339,7 @@
       </div>
     </section>
 
-    <!-- UGC / Social proof masonry -->
+    <!-- UGC masonry -->
     <section class="section alt">
       <div class="container">
         <div class="section-head">
@@ -259,10 +347,10 @@
           <p class="muted">Real homes, real calm. Tag us to be featured.</p>
         </div>
         <div class="masonry">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" alt="Cozy corner with candle" />
-          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop" alt="Living room styling" />
-          <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=800&auto=format&fit=crop" alt="Soft morning light" />
-          <img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=800&auto=format&fit=crop" alt="Desk setup" />
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" alt="Cozy corner with candle" loading="lazy" width="800" height="1000" />
+          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop" alt="Living room styling" loading="lazy" width="800" height="1000" />
+          <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=800&auto=format&fit=crop" alt="Soft morning light" loading="lazy" width="800" height="1000" />
+          <img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=800&auto=format&fit=crop" alt="Desk setup" loading="lazy" width="800" height="1000" />
         </div>
       </div>
     </section>
@@ -276,13 +364,13 @@
         </div>
         <form class="signup-form" action="#" method="post" aria-label="Join newsletter">
           <label for="email" class="sr-only">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <input id="email" name="email" type="email" required placeholder="you@example.com" inputmode="email" />
           <button class="btn btn-primary" type="submit">Join Now</button>
         </form>
       </div>
     </section>
 
-    <!-- Sustainability anchor -->
+    <!-- Sustainability -->
     <section id="sustainability" class="section">
       <div class="container split">
         <div>
@@ -291,7 +379,14 @@
           <a class="link" href="#">Learn more →</a>
         </div>
         <figure class="rounded shadow">
-          <img src="https://images.unsplash.com/photo-1529176270292-6a3b453f3f87?q=80&w=1200&auto=format&fit=crop" alt="Refillable jars and recyclable boxes" />
+          <picture>
+            <source srcset="
+              https://images.unsplash.com/photo-1529176270292-6a3b453f3f87?q=80&w=900&auto=format&fit=crop 900w,
+              https://images.unsplash.com/photo-1529176270292-6a3b453f3f87?q=80&w=1200&auto=format&fit=crop 1200w"
+              sizes="(max-width: 900px) 92vw, 45vw" />
+            <img src="https://images.unsplash.com/photo-1529176270292-6a3b453f3f87?q=80&w=1200&auto=format&fit=crop"
+                 alt="Refillable jars and recyclable boxes" loading="lazy" width="1200" height="800" />
+          </picture>
         </figure>
       </div>
     </section>
@@ -347,6 +442,19 @@
       </div>
     </div>
   </div>
+
+  <!-- Mobile menu toggle + popup -->
+  <script>
+    (function(){
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileNav');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', ()=>{
+        const opened = menu.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      });
+    })();
+  </script>
   <script src="./popup.js"></script>
 </body>
 </html>

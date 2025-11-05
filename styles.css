@@ -220,3 +220,24 @@ a:hover{text-decoration:underline}
 .sg-cta .btn-ghost{border:1px solid #ddd;color:#333;background:#fff}
 .sg-footnote{font-size:.82rem;color:#777;margin-top:.5rem}
 @media (max-width:520px){.sg-hl{font-size:1.25rem}}
+
+/* --- Hero text positioning --- */
+.hero-text.left-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 垂直居中 */
+  align-items: flex-start;   /* 靠左对齐内容 */
+  text-align: left;          /* 文字左对齐 */
+  min-height: 100%;          /* 占满父容器高度 */
+  padding-left: 5%;          /* 左边留一点空间 */
+  padding-right: 5%;         /* 让手机上不贴边 */
+}
+
+@media (max-width: 768px) {
+  .hero-text.left-centered {
+    align-items: center;     /* 手机端文字居中对齐更美观 */
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
